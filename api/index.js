@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 5000;
@@ -10,7 +11,7 @@ const userRouter = require("./routes/UserRoutes");
 const orderRouter = require("./routes/OrderRoutes");
 
 mongoose.connect(
-  "mongodb+srv://User1:ProjectPass1@cluster1.xp9v81x.mongodb.net/",
+  process.env.MONGODB_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
